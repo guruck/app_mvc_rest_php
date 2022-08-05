@@ -52,7 +52,58 @@
     <div id="post"></div>
   </p>
 
+  <div class="titulo">API do PHP - Arquivo Download</div>
 
+  <?php
+  
+  print_r($_FILES);
+  print_r($_POST);
+  print_r($_GET);
+
+  $arquivos = $_SESSION['arquivos'] ?? [];
+
+
+  if (isset($_FILES) && isset($_FILES['userfile'])){
+    $uploaddir = './assets/uploads/';
+    $ext = strtolower(substr($_FILES['userfile']['name'],-4));
+    $new_name = $_SESSION['user']->name . $ext;
+    // $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+    $uploadfile = $uploaddir . $new_name;
+    $tmp = $_FILES['userfile']['tmp_name'];
+    echo '<pre>';
+    if (move_uploaded_file($tmp, $uploadfile)) {
+      echo "Arquivo válido e enviado com sucesso.\n";
+      $arquivos[] = $_FILES['userfile']['name'];
+      $_SESSION['arquivos'] = $arquivos;
+    } else {
+        echo "Possível ataque de upload de arquivo!\n";
+    }
+
+    echo 'Aqui está mais informações de debug:';
+    print_r($_FILES);
+
+    print "</pre>";
+  }
+
+?>
+
+<!-- O tipo de encoding de dados, enctype, DEVE ser especificado abaixo -->
+<form enctype="multipart/form-data" action="#" method="POST">
+    <!-- MAX_FILE_SIZE deve preceder o campo input -->
+    <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+    <!-- O Nome do elemento input determina o nome da array $_FILES -->
+    Enviar esse arquivo: <input name="userfile" type="file" accept="image/*"/>
+    <input type="submit" value="Enviar arquivo" />
+</form>
+<ul>
+  <?php foreach($arquivos as $arqSessao): ?>
+    <?php if(stripos($arqSessao,'.jpg')>0): ?>
+      <li>
+        <img src="/assets/uploads/<?= $arqSessao ?>" alt="<?= $arqSessao ?>" height="220"/>
+      </li>
+    <?php endif ?>
+  <?php endforeach ?>
+</ul>
 
 </main>
 

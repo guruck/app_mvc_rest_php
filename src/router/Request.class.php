@@ -45,7 +45,7 @@
          }
      }
   
-     protected function sefFiles() {
+     protected function setFiles() {
          foreach ($_FILES as $key => $value) {
              $this->files[$key] = $value;
          }

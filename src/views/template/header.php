@@ -26,7 +26,11 @@
     <div class="spacer"></div>
     <div class="dropdown">
       <div class="dropdown-button">
-        <img class="avatar" src="<?= "http://www.gravatar.com/avatar.php?gravatar_id=" . md5(strtolower(trim($_SESSION['user']->email))) ?>" alt="3x4" >
+        <!-- <img class="avatar" src="
+          ?= "http://www.gravatar.com/avatar.php?gravatar_id=" . md5(strtolower(trim($_SESSION['user']->email))) ?>
+        " alt="3x4" > -->
+
+        <img class="avatar" src=" <?= $userAvatar ?> " alt="3x4" >
         <span class="ml-3"><?= $_SESSION['user']->name ?></span>
         <i class="icofont-simple-down mx-2"></i>
       </div>
@@ -34,6 +38,9 @@
         <ul class="nav-list">
           <li class="nav-item">
             <a href="/selfpassword/<?= $_SESSION['user']->id ?>"><i class="icofont-key-hole mr-2"></i>meus dados</a>
+          </li>
+          <li class="nav-item">
+            <a href="/avatar"><i class="icofont-brand-dodge mr-2"></i>avatar</a>
           </li>
           <li class="nav-item">
             <a href="/logout"><i class="icofont-logout mr-2"></i>Sair</a>

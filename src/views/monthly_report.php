@@ -3,10 +3,10 @@
     $icon = "icofont-ui-calendar";
     $titulo = "Relatorio Mensal: {$_SESSION['user']->name}";
     $subtitulo = "Acompanhe seu saldo de horas!";
-    renderTitle($titulo, $subtitulo, $icon);
-    include_once(TEMPLATE_PATH . "/messages.php");
+    include(TEMPLATE_PATH . "/titulo.php");
+    include(TEMPLATE_PATH . "/messages.php");
+    use Lib\DateUtils as DateUtils;
   ?>
-
 <div class="card">
   <form action="#" method="post" class="row row-cols-lg-auto g-3">
       <?php if($user->is_admin): ?>
@@ -54,7 +54,7 @@
         <tbody>
     <?php foreach ($report as $key => $value): ?>
           <tr>
-            <td><?= formatDateWithLocale($value->work_date,'%A, %d/%m/%y') ?></td>
+            <td><?= DateUtils::formatDateWithLocale($value->work_date,'%A, %d/%m/%y') ?></td>
             <td><?= $value->time1 ?></td>
             <td><?= $value->time2 ?></td>
             <td><?= $value->time3 ?></td>

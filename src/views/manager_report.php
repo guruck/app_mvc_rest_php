@@ -3,7 +3,8 @@
     $icon = "icofont-chart-histogram";
     $titulo = "Relatório Gerencial: {$_SESSION['user']->name}";
     $subtitulo = "Resumo das horas trabalhadas dos funcionários";
-    renderTitle($titulo, $subtitulo, $icon);
+    include(TEMPLATE_PATH . "/titulo.php");
+    include(TEMPLATE_PATH . "/messages.php");
   ?>
   <div class="summary-boxes">
     <div class="summary-box bg-primary">

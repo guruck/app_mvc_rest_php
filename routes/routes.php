@@ -12,6 +12,8 @@
  //Teste
  Route::get(['set' => '/', 'as' => 'lista.index'], 'Lista@index');
  Route::get(['set' => '/teste', 'as' => 'lista.teste'], 'Lista@teste');
+ Route::post(['set' => '/teste', 'as' => 'lista.teste'], 'Lista@teste');
+ Route::get(['set' => '/icones', 'as' => 'lista.icones'], 'Lista@icones');
  Route::get(['set' => '/lista', 'as' => 'lista.index'], 'Lista@index');
  Route::get(['set' => '/lista/{id}/show', 'as' => 'lista.show'], 'Lista@show');
 
@@ -33,3 +35,13 @@
   Route::get(['set' => '/accounts/new', 'as' => 'usuarios.novo'], 'Usuarios@novo');
   Route::post(['set' => '/accounts/update', 'as' => 'usuarios.novo'], 'Usuarios@novo');
   Route::get(['set' => '/accounts/{id}/delete', 'as' => 'usuarios.delete'], 'Usuarios@delete');
+  Route::get(['set' => '/avatar', 'as' => 'usuarios.avatar'], 'Usuarios@avatar');  
+  Route::post(['set' => '/avatar', 'as' => 'usuarios.avatar'], 'Usuarios@avatar');  
+  
+  Route::get(['set' => '/records', 'as' => 'urecords'], 'DayRecords@index');
+  Route::get(['set' => '/mensalreport', 'as' => 'mreport'], 'MonthlyReport@index');
+  Route::post(['set' => '/mensalreport', 'as' => 'mreport'], 'MonthlyReport@index');
+  Route::get(['set' => '/managerreport', 'as' => 'mngreport'], 'ManagerReport@index');
+  
+  Route::get(['set' => '/inout', 'as' => 'bateponto'], 'InOut@registra');
+  Route::post(['set' => '/inout', 'as' => 'bateponto'], 'InOut@registra');

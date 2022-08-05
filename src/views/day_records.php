@@ -3,8 +3,9 @@
     $icon = "icofont-check-alt";
     $titulo = "Registrar Ponto: {$_SESSION['user']->name}";
     $subtitulo = "mantenha seu ponto consistente!";
-    renderTitle($titulo, $subtitulo, $icon);
-    include_once(TEMPLATE_PATH . "/messages.php");
+    include(TEMPLATE_PATH . "/titulo.php");
+    include(TEMPLATE_PATH . "/messages.php");
+    
   ?>
   <div class="card">
     <div class="card-header">
@@ -22,14 +23,14 @@
       </div>
     </div>
     <div class="card-footer d-flex justify-content-center">
-      <a href="innout.php" class="btn btn-success btn-lg">
+      <a href="<?= route('bateponto') ?>" class="btn btn-success btn-lg">
         <i class="icofont-check mr-1"></i>
         Bater o Ponto
       </a>
     </div>
   </div>
   
-  <form class="mt-5" action="innout.php" method="post">
+  <form class="mt-5" action="<?= route('bateponto') ?>" method="post">
   <div class="input-group no-border">
     <input type="text" name="forcedTime" id="forcedTime" class="form-control" placeholder="digite o horario para simular 00:00:00"> 
     <button class="btn btn-md btn-danger ml-3">Simular Ponto</button>

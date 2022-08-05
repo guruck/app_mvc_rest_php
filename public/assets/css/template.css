@@ -108,9 +108,10 @@ header.header .dropdown-content a:hover{
 }
 
 header.header .avatar{
-  height: 75%;
+  height: 50px;
   border-radius: 50%;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 aside.sidebar{

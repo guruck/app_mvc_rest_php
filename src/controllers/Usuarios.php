@@ -114,4 +114,9 @@ class Usuarios
     }
   }
 
+  public function avatar(){
+
+    Carregador::loadTemplateView('avatar', [ 'resultado' => '' ]);
+  }
+
 }

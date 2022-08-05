@@ -29,6 +29,12 @@ class Lista
 
       Carregador::loadTemplateView('home', [ 'resultado' => '$data' ]);
   }
+  public function icones(){
+      $data = 'phpinfo()';
+
+
+      Carregador::loadTemplateView('icones', [ 'resultado' => '$data' ]);
+  }
 
   public function show($id) 
   {

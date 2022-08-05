@@ -1,5 +1,8 @@
 <?php
 namespace Lib;
+use \DateTime;
+use \DateTimeImmutable;
+
 
 class DateUtils{
   function getDateAsDateTime($date){
@@ -7,18 +10,18 @@ class DateUtils{
   }
 
   function isWeekend($date){
-    $inputDate = getDateAsDateTime($date);
+    $inputDate = self::getDateAsDateTime($date);
     return $inputDate->format('N') >= 6;
   }
 
   function isBefore($date1,$date2){
-    $inputDate1 = getDateAsDateTime($date1);
-    $inputDate2 = getDateAsDateTime($date2);
+    $inputDate1 = self::getDateAsDateTime($date1);
+    $inputDate2 = self::getDateAsDateTime($date2);
     return $inputDate1 <= $inputDate2;
   }
 
   function getNextDay($date){
-    $inputDate = getDateAsDateTime($date);
+    $inputDate = self::getDateAsDateTime($date);
     $inputDate->modify('+1 day');
     return $inputDate;
   }
@@ -45,7 +48,7 @@ class DateUtils{
   function intervalToString($interval1){
     $strDateInterval = $interval1;
     if (get_class($interval1)==='DateInterval'){
-      $dateInterval = intervalToDate($interval1);
+      $dateInterval = self::intervalToDate($interval1);
       $strDateInterval = $dateInterval->format('H:i:s');
     }elseif ((get_class($interval1) === 'DateTimeImmutable') || (get_class($interval1) === 'DateTime'))
     {
@@ -59,12 +62,12 @@ class DateUtils{
   }
 
   function getFirstDayOfMonth($date){
-    $time = getDateAsDateTime($date)->getTimestamp();
+    $time = self::getDateAsDateTime($date)->getTimestamp();
     return new DateTime(date('Y-m-1', $time));
   }
 
   function getLastDayOfMonth($date){
-    $time = getDateAsDateTime($date)->getTimestamp();
+    $time = self::getDateAsDateTime($date)->getTimestamp();
     return new DateTime(date('Y-m-t', $time));
   }
 
@@ -75,7 +78,7 @@ class DateUtils{
   }
 
   function isPastWorkDay($date){
-    return !isWeekend($date) && isBefore($date, new DateTime());
+    return !self::isWeekend($date) && self::isBefore($date, new DateTime());
   }
 
   function getTimeStringFromSeconds($seconds){
@@ -86,7 +89,7 @@ class DateUtils{
   }
 
   function formatDateWithLocale($date, $pattern){
-    $time = getDateAsDateTime($date)->getTimestamp();
+    $time = self::getDateAsDateTime($date)->getTimestamp();
     return utf8_encode(strftime($pattern, $time));
   }
 }

@@ -18,6 +18,7 @@ class Configuration{
     // Diretorios
     define('MODEL_PATH', realpath(dirname(__FILE__) . '/../model'));
     define('VIEW_PATH', realpath(dirname(__FILE__) . '/../views'));
+    define('ASSETS_PATH', realpath(dirname(__FILE__) . '/../../public/assets'));
     define('CONTROLLER_PATH', realpath(dirname(__FILE__) . '/../controllers'));
     // define('EXCEPTION_PATH', realpath(dirname(__FILE__) . '/../exceptions'));
     define('TEMPLATE_PATH', realpath(dirname(__FILE__) . '/../views/template'));
