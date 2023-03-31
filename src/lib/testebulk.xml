@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig IDIversion="Created by TDI7.1.1.5 - 2015-09-30" created="Fri Mar 31 11:33:11 UTC 2023" createdBy="developer" modified="Fri Mar 31 11:33:11 UTC 2023" modifiedBy="developer" version="7.1.1">
+    <Folder name="AssemblyLines">
+        <AssemblyLine name="a">
+            <ModTime>1680225830671</ModTime>
+            <Settings/>
+            <Hooks/>
+            <CheckpointConfig/>
+            <SandboxConfig/>
+            <SimulationConfig>
+                <SimulationStates>
+                    <Component name="ConnectorLoop" state="Enabled"/>
+                    <Component name="CARGA" state="Enabled"/>
+                    <Component name="EmptyScript" state="Enabled"/>
+                    <Component name="OutPutBulks" state="Simulated"/>
+                    <Component name="SOBRA" state="Enabled"/>
+                    <Component name="OutPutResto" state="Simulated"/>
+                    <Component name="INPUT" state="Enabled"/>
+                </SimulationStates>
+                <ProxySettings/>
+            </SimulationConfig>
+            <LogConfig/>
+            <ContainerEF name="EntryFeedContainer">
+                <Connector name="INPUT">
+                    <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                    <ModTime>1680225669132</ModTime>
+                    <ConnectorMode>Iterator</ConnectorMode>
+                    <ConnectorState>Enabled</ConnectorState>
+                    <Configuration>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <parameter name="filePath">/tmp/.X11-unix/owners.txt</parameter>
+                    </Configuration>
+                    <Parser>
+                        <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
+                        <parameter name="characterSet">UTF-8</parameter>
+                        <parameter name="csvColumnSeparator">,</parameter>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Schema>
+                        <Schema name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Schema>
+                    </Parser>
+                    <AttributeMap name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <AttributeMapItem>
+                            <Name>cobrar</Name>
+                            <Type>simple</Type>
+                            <Simple>cobrar</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>cod_responsavel</Name>
+                            <Type>simple</Type>
+                            <Simple>cod_responsavel</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>indicador</Name>
+                            <Type>simple</Type>
+                            <Simple>indicador</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>instancia</Name>
+                            <Type>simple</Type>
+                            <Simple>instancia</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>login</Name>
+                            <Type>simple</Type>
+                            <Simple>login</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>mes</Name>
+                            <Type>simple</Type>
+                            <Simple>mes</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>motivo</Name>
+                            <Type>simple</Type>
+                            <Simple>motivo</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>nome_responsavel</Name>
+                            <Type>simple</Type>
+                            <Simple>nome_responsavel</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>sigla</Name>
+                            <Type>simple</Type>
+                            <Simple>sigla</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>sistema</Name>
+                            <Type>simple</Type>
+                            <Simple>sistema</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>status_conta</Name>
+                            <Type>simple</Type>
+                            <Simple>status_conta</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>tipo_class</Name>
+                            <Type>simple</Type>
+                            <Simple>tipo_class</Simple>
+                        </AttributeMapItem>
+                    </AttributeMap>
+                    <AttributeMap name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </AttributeMap>
+                    <DeltaSettings>
+                        <WhenToCommit>After every database operation</WhenToCommit>
+                        <RowLocking>SERIALIZABLE</RowLocking>
+                        <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                    </DeltaSettings>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <SchemaItem>
+                            <Name>cobrar</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>cod_responsavel</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>indicador</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>instancia</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>login</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>mes</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>motivo</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>nome_responsavel</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>sigla</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>sistema</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>status_conta</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>tipo_class</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <SchemaItem>
+                            <Name>cobrar</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>cod_responsavel</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>indicador</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>instancia</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>login</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>mes</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>motivo</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>nome_responsavel</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>sigla</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>sistema</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>status_conta</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>tipo_class</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                    </Schema>
+                    <LinkCriteria>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </LinkCriteria>
+                    <Hooks>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <Hook name="before_initialize">
+                            <InheritFrom>[no inheritance]</InheritFrom>
+                            <Name>before_initialize</Name>
+                            <Script><![CDATA[var teste = new java.util.ArrayList();
+var stringSQL='';]]></Script>
+                            <Enabled>true</Enabled>
+                        </Hook>
+                    </Hooks>
+                    <CheckpointConfig/>
+                    <SandboxConfig/>
+                    <Reconnect>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ReconnectRules/>
+                    </Reconnect>
+                    <Operations/>
+                    <PoolDefinition>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </PoolDefinition>
+                    <PoolInstance/>
+                </Connector>
+            </ContainerEF>
+            <ContainerDF name="DataFlowContainer">
+                <Loop name="ConnectorLoop">
+                    <ModTime>1680225830671</ModTime>
+                    <LoopType>1</LoopType>
+                    <Connector name="ConnectorLoop">
+                        <InheritFrom>@INPUT</InheritFrom>
+                        <ModTime>1680225830671</ModTime>
+                        <ConnectorMode>Iterator</ConnectorMode>
+                        <ConnectorState>Enabled</ConnectorState>
+                        <Configuration>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <parameter name="connectorType">@INPUT</parameter>
+                            <parameter name="parserOption">Useless</parameter>
+                        </Configuration>
+                        <Parser>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <Schema name="Input">
+                                <InheritFrom>[parent]</InheritFrom>
+                            </Schema>
+                            <Schema name="Output">
+                                <InheritFrom>[parent]</InheritFrom>
+                            </Schema>
+                        </Parser>
+                        <AttributeMap name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </AttributeMap>
+                        <AttributeMap name="Output"/>
+                        <DeltaSettings>
+                            <WhenToCommit>After every database operation</WhenToCommit>
+                            <RowLocking>SERIALIZABLE</RowLocking>
+                            <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                        </DeltaSettings>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Schema>
+                        <Schema name="Output">
+                            <UserComment>{extsyntax=TEXTAREA, name=userComment}</UserComment>
+                            <InheritFrom>[no inheritance]</InheritFrom>
+                            <SchemaItem>
+                                <Name>debug</Name>
+                                <NativeSyntax>boolean</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>exclusiveLock</Name>
+                                <NativeSyntax>boolean</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>fileAppend</Name>
+                                <NativeSyntax>boolean</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>fileAwaitDataTimeout</Name>
+                                <NativeSyntax>DROPEDIT</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>filePath</Name>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>userComment</Name>
+                                <NativeSyntax>TEXTAREA</NativeSyntax>
+                            </SchemaItem>
+                        </Schema>
+                        <LinkCriteria/>
+                        <Hooks>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <Hook name="before_initialize">
+                                <InheritFrom>[no inheritance]</InheritFrom>
+                                <Name>before_initialize</Name>
+                                <Script/>
+                                <Enabled>false</Enabled>
+                            </Hook>
+                            <Hook name="end_of_data">
+                                <InheritFrom>[no inheritance]</InheritFrom>
+                                <Name>end_of_data</Name>
+                                <Script><![CDATA[if (teste.size() > 0){
+
+stringSQL = "INSERT INTO `db_base`.`owners` (`hash`,`status_conta`,`login`,`sistema`,`instancia`,`cod_responsavel`,`nome_responsavel`,`tipo_class`,`sigla`,`cobrar`,`motivo`,`indicador`,`mes`) VALUES ";
+
+for (var i =0; i<teste.size();i++){
+	stringSQL  += teste.get(i);
+	}
+	stringSQL = stringSQL.replace(/.$/, ';');
+	
+task.logmsg(stringSQL);
+teste.clear();
+}]]></Script>
+                                <Enabled>true</Enabled>
+                            </Hook>
+                            <Hook name="get_ok">
+                                <InheritFrom>[no inheritance]</InheritFrom>
+                                <Name>get_ok</Name>
+                                <Script><![CDATA[var hash = makeid(56);
+var row = "('"+ hash +"','"+ work.status_conta + "','" + work.login + "','" + work.sistema + "','" + work.instancia + "','" + work.cod_responsavel + "','" + work.nome_responsavel + "','" + trataString(work.getString("tipo_class")) + "','" + trataString(work.getString("sigla")) + "','" + work.cobrar + "','" + work.motivo + "','" + work.indicador + "'," + work.mes + "),";
+teste.add(row);]]></Script>
+                                <Enabled>true</Enabled>
+                            </Hook>
+                        </Hooks>
+                        <CheckpointConfig/>
+                        <SandboxConfig/>
+                        <Reconnect>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ReconnectRules/>
+                        </Reconnect>
+                        <Operations/>
+                        <PoolDefinition>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </PoolDefinition>
+                        <PoolInstance/>
+                    </Connector>
+                    <Branch name="ConnectorLoop">
+                        <ModTime>1680225830671</ModTime>
+                        <Branch name="CARGA">
+                            <ModTime>1680225597188</ModTime>
+                            <Script name="EmptyScript">
+                                <ModTime>1680224539256</ModTime>
+                                <parameter name="script"><![CDATA[stringSQL = "INSERT INTO `db_base`.`owners` (`hash`,`status_conta`,`login`,`sistema`,`instancia`,`cod_responsavel`,`nome_responsavel`,`tipo_class`,`sigla`,`cobrar`,`motivo`,`indicador`,`mes`) VALUES ";
+
+for (var i =0; i<teste.size();i++){
+	stringSQL  += teste.get(i);
+	}
+	stringSQL = stringSQL.replace(/.$/, ';');
+	
+task.logmsg(stringSQL);
+teste.clear();]]></parameter>
+                            </Script>
+                            <Connector name="OutPutBulks">
+                                <InheritFrom>system:/Connectors/ibmdi.Database</InheritFrom>
+                                <ModTime>1680225443793</ModTime>
+                                <ConnectorMode>AddOnly</ConnectorMode>
+                                <ConnectorState>Enabled</ConnectorState>
+                                <Configuration>
+                                    <InheritFrom>[parent]</InheritFrom>
+                                    <parameter name="debug">false</parameter>
+                                    <parameter name="jdbcCommit">End of Cycle</parameter>
+                                    <parameter name="jdbcCustomPreparedStatements">false</parameter>
+                                    <parameter name="jdbcDateFormat"/>
+                                    <parameter name="jdbcDriver">com.mysql.jdbc.Driver</parameter>
+                                    <parameter name="jdbcInsert"><![CDATA[@SUBSTITUTE{javascript // e.g. return "string value"
+
+return stringSQL;}]]></parameter>
+                                    <parameter name="jdbcLogin">usuario</parameter>
+                                    <parameter name="jdbcPassword">senhaforte</parameter>
+                                    <parameter name="jdbcSource">jdbc:mysql://database/db_base</parameter>
+                                    <parameter name="jdbcTable">owners</parameter>
+                                </Configuration>
+                                <Parser>
+                                    <InheritFrom>[parent]</InheritFrom>
+                                    <Schema name="Input">
+                                        <InheritFrom>[parent]</InheritFrom>
+                                    </Schema>
+                                    <Schema name="Output">
+                                        <InheritFrom>[parent]</InheritFrom>
+                                    </Schema>
+                                </Parser>
+                                <AttributeMap name="Input">
+                                    <InheritFrom>[parent]</InheritFrom>
+                                </AttributeMap>
+                                <AttributeMap name="Output">
+                                    <InheritFrom>[parent]</InheritFrom>
+                                    <AttributeMapItem>
+                                        <Name>stringSQL</Name>
+                                        <Type>advanced</Type>
+                                        <Script>stringSQL</Script>
+                                        <Simple>stringSQL</Simple>
+                                    </AttributeMapItem>
+                                </AttributeMap>
+                                <DeltaSettings>
+                                    <WhenToCommit>After every database operation</WhenToCommit>
+                                    <RowLocking>SERIALIZABLE</RowLocking>
+                                    <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                                </DeltaSettings>
+                                <Schema name="Input">
+                                    <InheritFrom>[parent]</InheritFrom>
+                                    <SchemaItem>
+                                        <Name>cobrar</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>cod_responsavel</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>email</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>hash</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>id</Name>
+                                        <Syntax>java.lang.Integer</Syntax>
+                                        <NativeSyntax>INT</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>indicador</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>instancia</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>login</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>mes</Name>
+                                        <Syntax>java.lang.Integer</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>motivo</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>nome</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>nome_responsavel</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>sigla</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>sistema</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>status_conta</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>tipo_class</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                    </SchemaItem>
+                                </Schema>
+                                <Schema name="Output">
+                                    <InheritFrom>[parent]</InheritFrom>
+                                    <SchemaItem>
+                                        <Name>cobrar</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>cod_responsavel</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>hash</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>CHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>indicador</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>instancia</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>login</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>mes</Name>
+                                        <Syntax>java.lang.Integer</Syntax>
+                                        <NativeSyntax>INT</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>motivo</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>nome_responsavel</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>sigla</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>sistema</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>status_conta</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                    <SchemaItem>
+                                        <Name>tipo_class</Name>
+                                        <Syntax>java.lang.String</Syntax>
+                                        <NativeSyntax>VARCHAR</NativeSyntax>
+                                    </SchemaItem>
+                                </Schema>
+                                <LinkCriteria>
+                                    <InheritFrom>[parent]</InheritFrom>
+                                </LinkCriteria>
+                                <Hooks>
+                                    <InheritFrom>[parent]</InheritFrom>
+                                </Hooks>
+                                <CheckpointConfig/>
+                                <SandboxConfig/>
+                                <Reconnect>
+                                    <InheritFrom>[parent]</InheritFrom>
+                                    <ReconnectRules/>
+                                </Reconnect>
+                                <Operations/>
+                                <PoolDefinition>
+                                    <InheritFrom>[parent]</InheritFrom>
+                                </PoolDefinition>
+                                <PoolInstance/>
+                            </Connector>
+                            <ScriptCondition>return ( teste.size() == 5 );</ScriptCondition>
+                            <Conditions/>
+                            <MatchAny>false</MatchAny>
+                            <Enabled>true</Enabled>
+                            <Type>0</Type>
+                        </Branch>
+                        <Conditions/>
+                        <MatchAny>false</MatchAny>
+                        <Enabled>true</Enabled>
+                        <Type>0</Type>
+                    </Branch>
+                </Loop>
+                <Branch name="SOBRA">
+                    <ModTime>1680225571097</ModTime>
+                    <Connector name="OutPutResto">
+                        <InheritFrom>system:/Connectors/ibmdi.Database</InheritFrom>
+                        <ModTime>1680225458186</ModTime>
+                        <ConnectorMode>AddOnly</ConnectorMode>
+                        <ConnectorState>Enabled</ConnectorState>
+                        <Configuration>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <parameter name="debug">false</parameter>
+                            <parameter name="jdbcCommit">End of Cycle</parameter>
+                            <parameter name="jdbcCustomPreparedStatements">false</parameter>
+                            <parameter name="jdbcDateFormat"/>
+                            <parameter name="jdbcDriver">com.mysql.jdbc.Driver</parameter>
+                            <parameter name="jdbcInsert"><![CDATA[@SUBSTITUTE{javascript // e.g. return "string value"
+return stringSQL;}]]></parameter>
+                            <parameter name="jdbcLogin">usuario</parameter>
+                            <parameter name="jdbcPassword">senhaforte</parameter>
+                            <parameter name="jdbcSource">jdbc:mysql://database/db_base</parameter>
+                            <parameter name="jdbcTable">owners</parameter>
+                        </Configuration>
+                        <Parser>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <Schema name="Input">
+                                <InheritFrom>[parent]</InheritFrom>
+                            </Schema>
+                            <Schema name="Output">
+                                <InheritFrom>[parent]</InheritFrom>
+                            </Schema>
+                        </Parser>
+                        <AttributeMap name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </AttributeMap>
+                        <AttributeMap name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <AttributeMapItem>
+                                <Name>stringSQL</Name>
+                                <Type>advanced</Type>
+                                <Script>stringSQL</Script>
+                                <Simple>stringSQL</Simple>
+                            </AttributeMapItem>
+                        </AttributeMap>
+                        <DeltaSettings>
+                            <WhenToCommit>After every database operation</WhenToCommit>
+                            <RowLocking>SERIALIZABLE</RowLocking>
+                            <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                        </DeltaSettings>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <SchemaItem>
+                                <Name>email</Name>
+                                <Syntax>java.lang.String</Syntax>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>id</Name>
+                                <Syntax>java.lang.Integer</Syntax>
+                                <NativeSyntax>INT</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>nome</Name>
+                                <Syntax>java.lang.String</Syntax>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                        </Schema>
+                        <Schema name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <SchemaItem>
+                                <Name>cobrar</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>cod_responsavel</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>hash</Name>
+                                <NativeSyntax>CHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>indicador</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>instancia</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>login</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>mes</Name>
+                                <NativeSyntax>INT</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>motivo</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>nome_responsavel</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>sigla</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>sistema</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>status_conta</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>tipo_class</Name>
+                                <NativeSyntax>VARCHAR</NativeSyntax>
+                            </SchemaItem>
+                        </Schema>
+                        <LinkCriteria>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </LinkCriteria>
+                        <Hooks>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Hooks>
+                        <CheckpointConfig/>
+                        <SandboxConfig/>
+                        <Reconnect>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ReconnectRules/>
+                        </Reconnect>
+                        <Operations/>
+                        <PoolDefinition>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </PoolDefinition>
+                        <PoolInstance/>
+                    </Connector>
+                    <ScriptCondition>return stringSQL != '';</ScriptCondition>
+                    <Conditions/>
+                    <MatchAny>false</MatchAny>
+                    <Enabled>true</Enabled>
+                    <Type>0</Type>
+                </Branch>
+            </ContainerDF>
+            <ThreadOptions/>
+            <Operations/>
+            <InitParams>
+                <Schema name="AssemblyLineInitParams"/>
+            </InitParams>
+        </AssemblyLine>
+    </Folder>
+    <Folder name="Connectors"/>
+    <Folder name="Parsers"/>
+    <Folder name="Scripts">
+        <Script name="functions">
+            <ModTime>1680225863821</ModTime>
+            <parameter name="autoInclude">true</parameter>
+            <parameter name="includeFiles"/>
+            <parameter name="script"><![CDATA[function makeid(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    var counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
+function trataString(string){
+	var aux = string.replace("\\", "\\\\");
+	aux = aux.replace("'", "\\'");
+	aux = aux.replace('/', '\\/');
+	return aux;	
+}]]></parameter>
+        </Script>
+    </Folder>
+    <JavaLibraries/>
+    <JavaProperties/>
+    <Folder name="Includes"/>
+    <Folder name="Config">
+        <LogConfig name="Logging"/>
+        <InstanceProperties name="AutoStart">
+            <AutoStart/>
+        </InstanceProperties>
+        <TombstonesConfig name="Tombstones"/>
+        <SolutionInterface name="SolutionInterface">
+            <ModTime>1680051832114</ModTime>
+            <PollInterval>-1</PollInterval>
+            <InstanceID>a</InstanceID>
+            <enabled>true</enabled>
+        </SolutionInterface>
+    </Folder>
+    <Folder name="Functions"/>
+    <Folder name="AttributeMaps"/>
+    <Properties name="Properties">
+        <Stores>
+            <PropertyStore name="Solution-Properties">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collectionType">Solution-Properties</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="Global-Properties">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collectionType">Global-Properties</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="System-Properties">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collectionType">System-Properties</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="a">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collection">@SUBSTITUTE{config.$directory}/a.properties</parameter>
+                    <parameter name="collectionType">a</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="Java-Properties">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collection">@SUBSTITUTE{config.$directory}/a.properties</parameter>
+                    <parameter name="collectionType">Java-Properties</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+        </Stores>
+    </Properties>
+    <Folder name="Schedules"/>
+    <Folder name="Sequences"/>
+</MetamergeConfig>
